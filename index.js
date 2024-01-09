@@ -22,9 +22,9 @@ app.use(methodOverride('_method'))
 app.use(productRoutes);
 app.use(reviewRoutes);
 
-
-app.listen(baseurl , ()=>{
-    console.log(`server is connected at port: ${baseurl}`);
+const PORT = process.env.PORT || 8080
+app.listen(PORT , ()=>{
+    console.log(`server is connected at port: ${PORT}`);
 })
 
 // Step 01 - Basic server
