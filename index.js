@@ -6,6 +6,7 @@ const seedDB = require('./seed');
 const productRoutes = require('./routes/product')
 const reviewRoutes = require('./routes/review')
 const methodOverride = require('method-override');
+const baseurl = "https://e-commerce-phase01.onrender.com";
 
 mongoose.connect('mongodb://127.0.0.1:27017/BigProject')
 .then(()=>{console.log("db connected")})
@@ -21,9 +22,9 @@ app.use(methodOverride('_method'))
 app.use(productRoutes);
 app.use(reviewRoutes);
 
-let PORT = 8080;
-app.listen(PORT , ()=>{
-    console.log(`server is connected at port: ${PORT}`);
+
+app.listen(baseurl , ()=>{
+    console.log(`server is connected at port: ${baseurl}`);
 })
 
 // Step 01 - Basic server
